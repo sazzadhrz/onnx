@@ -1,0 +1,29 @@
+name: "dbnet_bls"
+backend: "python"
+
+input [
+  {
+    name: "MODEL_NAME"
+    data_type: TYPE_STRING
+    dims: [ 1 ]
+  }
+]
+
+input [
+  {
+    name: "image"
+    data_type: TYPE_FP32
+    dims: [ -1, 2700, 1800, 3 ]
+  }
+]
+
+output [
+  {
+    name: "word_segments"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  }
+]
+
+
+instance_group [{ kind: KIND_CPU }]
